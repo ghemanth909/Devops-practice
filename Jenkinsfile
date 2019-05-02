@@ -20,6 +20,14 @@ pipeline {
             }
         }
 
+        stage ('tomcat'){
+        
+            steps{
+                sshagent(['tomcat']) {
+                    sh 'scp target/.war ec2-user@52.206.18.216:/opt/tomcat/webapps/'
+                    }
+            }
+        }
 
         stage ('Deployment Stage') {
             steps {
