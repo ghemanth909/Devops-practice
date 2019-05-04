@@ -25,17 +25,11 @@ pipeline {
             steps{
                     archive 'target/*.war'       
                     scp target/*.war /opt/tomcat/apache-tomcat-8.5.38/webapps'     
-						echo 'tomcat deployment'
+		    echo 'tomcat deployment'
+		    withMaven(maven : 'maven_3_0_5') {
+                    sh 'mvn deploy' 
+		}
             }
         }
-
-        stage ('Deployment Stage') {
-        
-            steps {
-                withMaven(maven : 'maven_3_0_5') {
-                    sh 'mvn deploy'
-                }
-            }
-        }
-    }
+}
 }
