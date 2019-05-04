@@ -1,4 +1,4 @@
-pipeline {
+ pipeline {
     agent any
 
     stages {
@@ -21,15 +21,12 @@ pipeline {
         }
 
         stage ('tomcat server deployment'){
-        
-            steps{
                     archive 'target/*.war'       
                     scp target/*.war /opt/tomcat/apache-tomcat-8.5.38/webapps'     
-		    echo 'tomcat deployment'
-		    withMaven(maven : 'maven_3_0_5') {
+					echo 'tomcat deployment'
+					withMaven(maven : 'maven_3_0_5') {
                     sh 'mvn deploy' 
-		}
             }
         }
-}
+   }
 }
