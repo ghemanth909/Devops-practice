@@ -20,16 +20,17 @@ pipeline {
             }
         }
 
-        stage ('tomcat'){
+        stage ('tomcat server deployment'){
         
             steps{
-                sshagent(['tomcat']) {
-                    sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@52.206.18.216:/opt/tomcat/webapps/'
-                    }
+                    archive 'target/*.war'       
+                    scp target/*.war /opt/tomcat/apache-tomcat-8.5.38/webapps'     
+						echo 'tomcat deployment'
             }
         }
 
         stage ('Deployment Stage') {
+        
             steps {
                 withMaven(maven : 'maven_3_0_5') {
                     sh 'mvn deploy'
