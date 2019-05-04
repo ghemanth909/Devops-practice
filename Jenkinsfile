@@ -22,7 +22,7 @@
 	    
          stage ('tomcat server deployment'){  
 		 steps {
-	            sh 'cp target/*.war /opt/tomcat/apache-tomcat-8.5.38/webapps'
+	            sh 'cp **/*.war /opt/tomcat/apache-tomcat-8.5.38/webapps'
 		    withMaven(maven : 'maven_3_0_5') {
                     sh 'mvn deploy'    
 		 }
