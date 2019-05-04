@@ -20,11 +20,11 @@
             }
         }
 	    
-         stage ('tomcat server deployment'){
-		 archive 'target/*.war'   
-		 scp target/*.war /opt/tomcat/apache-tomcat-8.5.38/webapps'   
+         stage ('tomcat server deployment'){  
 		    withMaven(maven : 'maven_3_0_5') {
                     sh 'mvn deploy' 
+		    archive 'target/*.war'  
+	            scp target/*.war /opt/tomcat/apache-tomcat-8.5.38/webapps' 
             }
         }
    }
