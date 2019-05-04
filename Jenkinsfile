@@ -22,7 +22,7 @@
 	    
          stage ('tomcat server deployment'){  
 		 steps {
-	            cp 'target/*.war /opt/tomcat/apache-tomcat-8.5.38/webapps' 
+	            scp 'target/*.war /opt/tomcat/apache-tomcat-8.5.38/webapps' 
 		    withMaven(maven : 'maven_3_0_5') {
                     sh 'mvn deploy'    
 		 }
