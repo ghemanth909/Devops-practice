@@ -22,7 +22,7 @@
              stage ('tomcat server deployment'){  
 		 steps {
 		    sh 'cp /var/lib/jenkins/workspace/job-pipeline-project/target/*.war /opt/tomcat/apache-tomcat-8.5.38/webapps'
-		    //sh 'emailext body: '', subject: 'Devops', to: 'ghemanth909@gmail.com; devopstest080@gmail.com''
+		    emailext body: '', subject: 'Devops', to: 'ghemanth909@gmail.com; devopstest080@gmail.com'
             }
         }
    }
