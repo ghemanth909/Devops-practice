@@ -10,9 +10,8 @@ i<?xml version="1.0" encoding="UTF-8"?>
   <packaging>war</packaging>
 
   <name>devops Maven Webapp</name>
- <!-- FIXME change it to the project's website -->
- <!-- FIXME change it to the project's website  git hub project-->
   <url>http://www.example.com</url>
+<!--UAT has been modified -->
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
