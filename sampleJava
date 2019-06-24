@@ -76,7 +76,6 @@ public class SampleJavaProject implements Runnable {
         } while (loop);
     }
 }
-<<<<<<< HEAD
  @Override
       public final void runSleep() {
           do {
@@ -98,6 +97,3 @@ public class SampleJavaProject implements Runnable {
                 return;
             }
         } while (loop);
-=======
-}
->>>>>>> parent of 7743839... mod. sampleJva
