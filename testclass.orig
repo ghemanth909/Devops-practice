@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-This is modifed in UAT-ENV  branch
-so if we try to merge git conflcit will occur due to ambiguity.
-=======
-This is modified in test-env branch
-
->>>>>>> test-env
